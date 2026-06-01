@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #262626;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #dbdbdb;
+  border-radius: 4px;
+}
+
+/* Instagram-like focus ring */
+*:focus-visible {
+  outline: 2px solid #0095f6;
+  outline-offset: 2px;
+}
+
+@layer utilities {
+  .grid-image {
+    @apply relative w-full bg-gray-100 overflow-hidden;
+    padding-bottom: 100%; /* square */
+  }
+
+  .grid-image img {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+}
